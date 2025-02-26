@@ -1,11 +1,48 @@
 //this connects array.js and item_creating.js to represent what is in the array
-//this starts off with some defaults by will
-// eventually take the input from the add button
+
 import {domShow} from "./item_creating.js"
 import {todos, createToDo} from "./array.js"
 console.log(todos)
-createToDo("title1","descr1","12/31","red")
-createToDo("title2","descr2","3/5","yellow")
-console.log(todos)
-domShow("title2","descr2","3/5","yellow")
-console.log("the thing has been ran")
+
+createToDo("title4","description4","5/5","green")
+createToDo("title5","description5","6/6","green")
+createToDo("title7","description7","7/7","green")
+
+for (let i =0; i<todos.length;i++) {
+    domShow(todos[i][0],todos[i][1],todos[i][2],todos[i][3])
+}
+const addDelete = (function  () {
+    const delete_buttons = document.querySelectorAll(".delete_button")
+    delete_buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const id = button.parentElement.id
+            const items = document.getElementById(id.toString()).childNodes
+            const parent_item = document.getElementById(id.toString())
+            console.log(items)
+
+            items.forEach((element) => {
+                parent_item.removeChild(element)
+            })
+            // we need this code
+            console.log(items)
+            for (let i =0; i<todos[id].length;i++) {
+                todos[id][i] = null
+            }
+            console.log(todos)
+
+        })
+    })
+})()
+const addComplete = (function  () {
+    const complete_buttons = document.querySelectorAll(".complete_button")
+    complete_buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            console.log(" complete!!")
+        })
+    })
+})()
+
+const div = document.querySelector("#add_item")
+div.addEventListener("click", ()=> {
+    alert('this has been clicked')
+})

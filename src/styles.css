@@ -5,3 +5,6 @@ item {
     width: 300px;;
     display: flex;
 }
+button {
+    height: 30px;
+}
