@@ -19,11 +19,9 @@ const addDelete = (function  () {
             const items = document.getElementById(id.toString()).childNodes
             const parent_item = document.getElementById(id.toString())
             console.log(items)
-
-            items.forEach((element) => {
-                parent_item.removeChild(element)
-            })
-            // we need this code
+            for (let i = items.length -1 ; i>=0; i--) {
+                items[i].remove()
+            }
             console.log(items)
             for (let i =0; i<todos[id].length;i++) {
                 todos[id][i] = null
