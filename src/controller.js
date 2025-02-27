@@ -39,8 +39,12 @@ const addComplete = (function  () {
         })
     })
 })()
-
+const dialog = document.querySelector("dialog")
 const div = document.querySelector("#add_item")
 div.addEventListener("click", ()=> {
-    alert('this has been clicked')
+    dialog.showModal()
+})
+const dialog_close = document.querySelector("#close_dialog")
+dialog_close.addEventListener("click", () => {
+    dialog.close()
 })
