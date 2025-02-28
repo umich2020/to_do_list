@@ -3,8 +3,37 @@ item {
     margin: 16px;
     height: 300px;
     width: 300px;;
-    display: flex;
+    display:grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+description {
+    grid-row: 2;
+}
+item > * {
+    grid-row: 1 1;
+}
+
 button {
     height: 30px;
+}
+body {
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+}
+sidebar {
+    grid-column: 1,1
+}
+#add_item {
+    width: 70px;
+    height: 70px;
+    border-radius: 36px;
+    text-align: center;
+    align-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    position: fixed;
+    grid-column: 2;
+    right: 5vw;
+    bottom: 5vh;
 }
