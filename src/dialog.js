@@ -1,3 +1,7 @@
+import { domShow } from "./item_creating.js"
+import { todos, createToDo } from "./array.js"
+
+
 const dialog = document.querySelector("dialog")
 const div = document.querySelector("#add_item")
 div.addEventListener("click", ()=> {
@@ -15,8 +19,11 @@ submit_button.addEventListener("click", () => {
     let description=document.getElementById('description').value
     let due_date =document.getElementById('due_date').value
     let priority = document.querySelector(`input[name="priority_type"]:checked`).value
-    console.log("title is the " +title)
-    console.log("description is the " +description)
-    console.log("due date is the " +due_date)
-    console.log("prioirty is "+priority)
+    createToDo(title,description,due_date,priority)
+    domShow(title,description,due_date,priority)
+    dialog.close()
+    // console.log("title is the " +title)
+    // console.log("description is the " +description)
+    // console.log("due date is the " +due_date)
+    // console.log("prioirty is "+priority)
 })
