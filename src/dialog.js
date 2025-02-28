@@ -8,10 +8,15 @@ dialog_close.addEventListener("click", () => {
     dialog.close()
 })
 const submit_button =document.getElementById("submit_button")
-const form = document.getElementById("new_todo")
-const formData = new FormData(form)
+
+const form = new FormData(document.getElementById("new_todo"))
 submit_button.addEventListener("click", () => {
-    console.log(form)
-    formData.get("title")
-    
+    let title=document.getElementById('title').value
+    let description=document.getElementById('description').value
+    let due_date =document.getElementById('due_date').value
+    let priority = document.querySelector(`input[name="priority_type"]:checked`).value
+    console.log("title is the " +title)
+    console.log("description is the " +description)
+    console.log("due date is the " +due_date)
+    console.log("prioirty is "+priority)
 })
