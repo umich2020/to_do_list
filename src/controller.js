@@ -1,11 +1,11 @@
 //this connects array.js and item_creating.js to represent what is in the array
 
 import {domShow} from "./item_creating.js"
-import {todos, createToDo} from "./array.js"
-console.log(todos)
-
+import {todos, tmr_dos, createToDo,today_value} from "./array.js"
 createToDo("title4","description4","5/5","green")
 createToDo("title5","description5","6/6","green")
+console.log("today value is "+today_value)
+today_value.tmr = false
 createToDo("title7","description7","7/7","green")
 
 for (let i =0; i<todos.length;i++) {
@@ -39,12 +39,5 @@ const addComplete = (function  () {
         })
     })
 })()
-const dialog = document.querySelector("dialog")
-const div = document.querySelector("#add_item")
-div.addEventListener("click", ()=> {
-    dialog.showModal()
-})
-const dialog_close = document.querySelector("#close_dialog")
-dialog_close.addEventListener("click", () => {
-    dialog.close()
-})
+
+// the dialog and dialog close show go to dialog
