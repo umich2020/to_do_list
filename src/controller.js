@@ -1,13 +1,15 @@
 //this connects array.js and item_creating.js to represent what is in the array
-
+//now i'm able to create array
 import {domShow} from "./item_creating.js"
 import {todos, tmr_dos, createToDo,today_value} from "./array.js"
 createToDo("title4","description4","5/5","green")
 createToDo("title5","description5","6/6","green")
-console.log("today value is "+today_value)
-today_value.tmr = false
+console.log("today value is "+today_value.tdy)
+// today_value.tdy = false
+console.log("today value is now "+today_value.tdy)
 createToDo("title7","description7","7/7","green")
-
+console.log("todos is "+todos)
+console.log("tmr todos is "+tmr_dos)
 for (let i =0; i<todos.length;i++) {
     domShow(todos[i][0],todos[i][1],todos[i][2],todos[i][3])
 }

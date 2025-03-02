@@ -1,13 +1,12 @@
-var today_value = {tmr: true}
+var today_value = {tdy: true}
 let todos = []
 let tmr_dos = []
-function createToDo(title,descr,date,priority) {
-    if (today_value.tmr === true) {
-        todos[todos.length] = [title,descr,date,priority]
+function createToDo(title,descr,date,priority,today = today_value.tdy) {
+    if (today_value.tdy === true) {
+        todos[todos.length] = [title,descr,date,priority,today]
     } else {
-        tmr_dos[tmr_dos.length] = [title,descr,date,priority]
-    }
-    //^ this piece of code might screw me because it sets logic//
+        tmr_dos[tmr_dos.length] = [title,descr,date,priority,today]
+    } //might not need the ,today in tmr_todos
     return {title, descr, date, priority}   
 }
 

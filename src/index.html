@@ -5,44 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <script src="controller.js" type="module" defer></script>
+    <script src="dialog.js"type="module"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <today>
-        <h1>Today</h1>
-    </today>
-    <tmr>
-        <h1>Tmr</h1>
-    </tmr>
-    <div>
+    <sidebar>
+        <today>
+            <h1>Today</h1>
+        </today>
+        <later>
+            <h1>Later</h1>
+        </later>
+    </sidebar>
 
-    </div>
     <to_do_items id="to_do_items">
     </to_do_items>
     <div style="background-color: lightgreen;" id="add_item">+</div>>
     <!--Dialog box-->
     <dialog>
         <button id="close_dialog">Close</button>
-        <form>
+        <form action = "dialog.js" id="new_todo">
             <form_header>
             <label for="title">Title</label>
             <input type="text" id="title" name="title">
             <label for="due_date">Due Date</label>
             <input type="date" id="due_date" name="due_date">
             <selection>
-                <input type="radio" id="priority_type" value="low">
+                <input type="radio" id ="low"name="priority_type" value="low">
                 <label for="low">Low</label>
-                <input type="radio" id="priority_type" value="medium">
+                <input type="radio" id="medium"name="priority_type" value="medium">
                 <label for="medium">Medium</label>
-                <input type="radio" id="priority_type" value="high"> 
+                <input type="radio" id="high"name="priority_type" value="high"> 
                 <label for="high">High</label>
             </selection>
             </form_header>
             <br>
             <label for="description">Description</label>
             <input type="text" id="description" name="description">
-            <button type="submit">Submit</button>
-            <!--Make sure it's not a regular button we have to work with-->
+            <button type="button" id="submit_button">Submit</button>
 
         </form>
     </dialog>
