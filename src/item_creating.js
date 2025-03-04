@@ -16,10 +16,11 @@ function createToDo (title,description, dueDate, priority) {
     const to_do_item = document.getElementsByTagName("item")[0].tagName
     createElement("h3",dueDate,to_do_item)
     createElement("h2",priority,to_do_item)
-    createElement("p",description,to_do_item)
+    createElement("description",description,to_do_item)
     createElement("button","Delete?",to_do_item,"delete_button")
     createElement("button","Completed",to_do_item,"complete_button")
     createElement("h1",title,to_do_item) 
+
 }
 
  export {createToDo as domShow}

@@ -22,8 +22,6 @@ submit_button.addEventListener("click", () => {
     createToDo(title,description,due_date,priority)
     domShow(title,description,due_date,priority)
     dialog.close()
-    // console.log("title is the " +title)
-    // console.log("description is the " +description)
-    // console.log("due date is the " +due_date)
-    // console.log("prioirty is "+priority)
+
 })
+console.log(todos)

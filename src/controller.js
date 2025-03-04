@@ -4,14 +4,19 @@ import {domShow} from "./item_creating.js"
 import {todos, tmr_dos, createToDo,today_value} from "./array.js"
 createToDo("title4","description4","5/5","green")
 createToDo("title5","description5","6/6","green")
-console.log("today value is "+today_value.tdy)
-// today_value.tdy = false
-console.log("today value is now "+today_value.tdy)
+today_value.tdy=false
 createToDo("title7","description7","7/7","green")
-console.log("todos is "+todos)
-console.log("tmr todos is "+tmr_dos)
-for (let i =0; i<todos.length;i++) {
-    domShow(todos[i][0],todos[i][1],todos[i][2],todos[i][3])
+export function showItems (array) {
+    for (let i =0; i<array.length;i++) {
+        domShow(array[i][0],array[i][1],array[i][2],array[i][3])
+    }
+}
+showItems(todos)
+export function removeAllItems () {
+    const items = document.getElementById("to_do_items").childNodes
+    for (let i = items.length -1 ; i>=0; i--) {
+        items[i].remove()
+    }
 }
 const addDelete = (function  () {
     const delete_buttons = document.querySelectorAll(".delete_button")
@@ -27,7 +32,8 @@ const addDelete = (function  () {
             for (let i =0; i<todos[id].length;i++) {
                 todos[id][i] = null
             }
-
+            //should've seperated the dom delete portion cuz i'll 
+            // need to use it later on
             console.log(todos)
 
         })
