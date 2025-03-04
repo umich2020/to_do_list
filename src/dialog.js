@@ -1,5 +1,5 @@
 import { domShow } from "./item_creating.js"
-import { todos, createToDo, tmr_dos } from "./array.js"
+import { todos, createToDo, tmr_dos, today_value } from "./array.js"
 import { addDelete } from "./controller.js"
 
 
@@ -24,7 +24,6 @@ submit_button.addEventListener("click", () => {
     domShow(title,description,due_date,priority)
     dialog.close()
     addDelete()
-    console.log(todos)
-    console.log(tmr_dos)
+    const tempArray = [title,description,due_date,priority,today_value.tdy]
+    localStorage.setItem(title,JSON.stringify(tempArray))
 })
-console.log(todos)
