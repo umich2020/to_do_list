@@ -1,5 +1,6 @@
 import { domShow } from "./item_creating.js"
-import { todos, createToDo } from "./array.js"
+import { todos, createToDo, tmr_dos } from "./array.js"
+import { addDelete } from "./controller.js"
 
 
 const dialog = document.querySelector("dialog")
@@ -22,6 +23,8 @@ submit_button.addEventListener("click", () => {
     createToDo(title,description,due_date,priority)
     domShow(title,description,due_date,priority)
     dialog.close()
-
+    addDelete()
+    console.log(todos)
+    console.log(tmr_dos)
 })
 console.log(todos)

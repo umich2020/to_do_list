@@ -2,9 +2,10 @@
 //now i'm able to create array
 import {domShow} from "./item_creating.js"
 import {todos, tmr_dos, createToDo,today_value} from "./array.js"
+today_value.tdy=false
 createToDo("title4","description4","5/5","green")
 createToDo("title5","description5","6/6","green")
-today_value.tdy=false
+today_value.tdy=true
 createToDo("title7","description7","7/7","green")
 export function showItems (array) {
     for (let i =0; i<array.length;i++) {
@@ -18,7 +19,7 @@ export function removeAllItems () {
         items[i].remove()
     }
 }
-const addDelete = (function  () {
+export function addDelete () {
     const delete_buttons = document.querySelectorAll(".delete_button")
     delete_buttons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -38,7 +39,7 @@ const addDelete = (function  () {
 
         })
     })
-})()
+}
 const addComplete = (function  () {
     const complete_buttons = document.querySelectorAll(".complete_button")
     complete_buttons.forEach((button) => {
