@@ -1,18 +1,28 @@
-let todo_id = 0;
+import {today_value} from "./array.js"
+let todo_id ={id:0, tmr_id:1}
 function createElement(element,text="", parent="to_do_items", _class="",id="") {
     // const todo_items = document.querySelector("to_do_items")
     const item_list = document.querySelector(parent)
     const newElement = document.createElement(element)
     newElement.textContent = text
     newElement.setAttribute("class",_class)
-    if(element==="item") {
-        newElement.setAttribute("id",id)
-        todo_id ++
+    if(element==="item" ) {
+        if (today_value.tdy === true) {
+            newElement.setAttribute("id",id)
+            todo_id.id ++
+        } else {
+            newElement.setAttribute("id",id)
+            todo_id.tmr_id ++
+        }
     }
     item_list.insertAdjacentElement("afterbegin",newElement)
 }
 function createToDo (title,description, dueDate, priority) {
-    createElement("item","","to_do_items","",todo_id)
+    if (today_value.tdy === true) {
+        createElement("item","","to_do_items","",todo_id.id)
+    } else {
+        createElement("item","","to_do_items","",todo_id.tmr_id)
+    }
     const to_do_item = document.getElementsByTagName("item")[0].tagName
     createElement("h3",dueDate,to_do_item)
     createElement("h2",priority,to_do_item)
@@ -23,4 +33,4 @@ function createToDo (title,description, dueDate, priority) {
 
 }
 
- export {createToDo as domShow}
+ export {createToDo as domShow, todo_id}

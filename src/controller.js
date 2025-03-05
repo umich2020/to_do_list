@@ -4,7 +4,6 @@ import {domShow} from "./item_creating.js"
 import {todos, tmr_dos, createToDo,today_value} from "./array.js"
 today_value.tdy=false
 createToDo("title4","description4","5/5","green")
-createToDo("title5","description5","6/6","green")
 today_value.tdy=true
 createToDo("title7","description7","7/7","green")
 export function showItems (array) {
