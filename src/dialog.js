@@ -2,7 +2,6 @@ import { domShow } from "./item_creating.js"
 import { todos, createToDo, tmr_dos, today_value } from "./array.js"
 import { addDelete } from "./controller.js"
 
-
 const dialog = document.querySelector("dialog")
 const div = document.querySelector("#add_item")
 div.addEventListener("click", ()=> {
@@ -29,8 +28,8 @@ submit_button.addEventListener("click", () => {
     dialog.close()
     addDelete()
     const tempArray = [title,description,due_date,priority,today_value.tdy]
-    localStorage.setItem(title,JSON.stringify(tempArray))
+    localStorage.setItem(title + id + today_value.tdy,JSON.stringify(tempArray))
+    const all = {...localStorage}
+    console.log("local storage is "+ JSON.stringify(localStorage))
+
 })
-localStorage.clear()
-let temp = localStorage.getItem("asdf")
-console.log("this should only work for the second time: " +temp)
