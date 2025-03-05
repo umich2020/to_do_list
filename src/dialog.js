@@ -22,8 +22,15 @@ submit_button.addEventListener("click", () => {
     let priority = document.querySelector(`input[name="priority_type"]:checked`).value
     createToDo(title,description,due_date,priority)
     domShow(title,description,due_date,priority)
+    let id = document.getElementsByTagName("item")[0].id
+    console.log("the id is " + id)
+    // this is a bug got
+    //to fix the id issue first
     dialog.close()
     addDelete()
     const tempArray = [title,description,due_date,priority,today_value.tdy]
     localStorage.setItem(title,JSON.stringify(tempArray))
 })
+localStorage.clear()
+let temp = localStorage.getItem("asdf")
+console.log("this should only work for the second time: " +temp)

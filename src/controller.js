@@ -13,6 +13,7 @@ export function showItems (array) {
     }
 }
 showItems(todos)
+
 export function removeAllItems () {
     const items = document.getElementById("to_do_items").childNodes
     for (let i = items.length -1 ; i>=0; i--) {
