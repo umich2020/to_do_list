@@ -19,9 +19,9 @@ function createElement(element,text="", parent="to_do_items", _class="",id="") {
 }
 function createToDo (title,description, dueDate, priority) {
     if (today_value.tdy === true) {
-        createElement("item","","to_do_items","",todo_id.id)
+        createElement("item","","to_do_items","",("p")+todo_id.id)
     } else {
-        createElement("item","","to_do_items","",todo_id.tmr_id)
+        createElement("item","","to_do_items","",("p")+todo_id.tmr_id)
     }
     const to_do_item = document.getElementsByTagName("item")[0].tagName
     createElement("h3",dueDate,to_do_item)

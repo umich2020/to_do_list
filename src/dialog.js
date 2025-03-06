@@ -23,8 +23,6 @@ submit_button.addEventListener("click", () => {
     domShow(title,description,due_date,priority)
     let id = document.getElementsByTagName("item")[0].id
     console.log("the id is " + id)
-    // this is a bug got
-    //to fix the id issue first
     dialog.close()
     addDelete()
     const tempArray = [title,description,due_date,priority,today_value.tdy]
