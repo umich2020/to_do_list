@@ -22,7 +22,7 @@ later.addEventListener("click", () => {
     today_value.tdy = false
     // console.log("tmmmr id is before the counter " +todo_id.tmr_id)
     // console.log("this counter is "+ counterLtr)
-    todo_id.tmr_id -= 3*counterLtr
+    todo_id.tmr_id -= 1*counterLtr
     // console.log("id of the bug for later is "+todo_id.tmr_id)
     removeAllItems()
     showItems(tmr_dos)

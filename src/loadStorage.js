@@ -1,4 +1,4 @@
-import { domShow } from "./item_creating.js"
+import { domShow,todo_id } from "./item_creating.js"
 import { today_value } from "./array.js"
 import { addDelete } from "./controller.js"
 console.log(localStorage)
@@ -8,21 +8,32 @@ export function showLocal () {
         let item = localStorage.getItem(key)
         if (key != "loglevel") {
             item = JSON.parse(item)
-        }
-        
-        // console.log("the item is now being returned: " +item[0])
+        }        
         let title = item[0]
         let description = item[1]
         let dueDate = item[2]
         let priority = item[3]
-        let tdy = item[4]
-        // console.log("prioirty is "+tdy+"and today value is "+today_value.tdy)
+        var tdy = item[4]
         if (tdy === today_value.tdy) {
             domShow(title,description,dueDate,priority)
-
         }
     }
+    if (tdy === true) {
+        todo_id.id -= localStorage.length
+    } else {
+        todo_id.tmr_id -= localStorage.length
+    }
 }
+// export function getTdy () {
+//     for (let i=0; i< localStorage.length; i++) {
+//         let key=localStorage.key(i)
+//         let item = localStorage.getItem(key)
+//         if (key != "loglevel") {
+//             item = JSON.parse(item)
+//         }
+//         var tdy = item[4]
+//     }
+// }
 export function deleteLocal (key) {
     localStorage.removeItem(key)
     console.log("the item has been deleted "+ localStorage)
