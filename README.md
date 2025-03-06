@@ -28,15 +28,9 @@ I would rather use notion or an actual dashboard. So I'm skipping this.
 ### psuedo code
 #### Home page
 HTML
-* Side bar
-* add task button
+
 #### Javascript
-* Array[][] with object detail(title, desc, prior, etc)-console for 1,2 items-done
-* js file to create new items and put it in an array -done
-* Connect dom js file- be able to create new items -done
-* logic file that connects array.js and item_creating.js-done
-* js file that removes the items in the dom
-* js file that upload new details in the dom
+
 
 #### Client/server stuff
 * local storage
@@ -50,10 +44,17 @@ HTML
 * add complete and delete button(which is probably a get all element script)
 -we're goint to deal with date later
 -add the div for the top part later
+-we're goint to do a harder css instead of building more sclaable js 
+##### add element time
 -Note that the "+" button, id has to be changed when it's clicked on today or tmr
-	-Then all items will have class of "today/later", unless we want to do another array
-	-i.e. array for today, array for tmr. Like the if statement
 #### optional
 * automatically have templates=> to do list which we'll do later after this is entirely done
 * change priority by clicking the color
 --technically a delete a =nd a complete button are two sides of the same coin. and it's not like we can cross them out and delete them later. eh we're keeping it,becaues we can mess with the transparency
+
+
+
+--there's a local storage bug where i'm gettin duplicates
+-i'm leaving delete bug in. it doesn't simulat normal user behavior. and I would like to move on
+-this is incomplete. But i'm going to move on. I've learned a lot but I'm 
+getting sick of coding this
