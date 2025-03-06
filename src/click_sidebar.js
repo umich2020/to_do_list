@@ -11,24 +11,24 @@ let today = document.querySelector("today")
         increaseCounter(counterTdy)
         today_value.tdy = true
         todo_id.id -= 1*counterTdy
-        console.log("the id of the bug i for today is "+todo_id.id)
         removeAllItems()
         showItems(todos)
         showLocal()
         addDelete()
-        console.log("the today counter is "+counterLtr )
     })
 let later = document.querySelector("later")
 later.addEventListener("click", () => {
     increaseCounter(counterLtr)
     today_value.tdy = false
-    todo_id.tmr_id -= 1*counterLtr
-    console.log("the id of the bug for later is "+todo_id.tmr_id)
+    // console.log("tmmmr id is before the counter " +todo_id.tmr_id)
+    // console.log("this counter is "+ counterLtr)
+    todo_id.tmr_id -= 3*counterLtr
+    // console.log("id of the bug for later is "+todo_id.tmr_id)
     removeAllItems()
     showItems(tmr_dos)
+    // console.log("3RD STEP "+todo_id.tmr_id)
     showLocal()
     addDelete()
-    console.log("the later counter is "+counterLtr )
 })
 //can add on clicick css that changes the border or something
 
@@ -46,4 +46,6 @@ function increaseCounter (counter) {
             counter ++
         }
     }
+    console.log("the counter is now "+ counter)
+
 }
