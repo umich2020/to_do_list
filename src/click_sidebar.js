@@ -6,29 +6,42 @@ import { showLocal } from "./loadStorage.js"
 
 let counterTdy = 1
 let counterLtr = 1
+export let previousClick = "today"
+export let ah = false
 let today = document.querySelector("today")
     today.addEventListener("click", () => {
-        increaseCounter(counterTdy)
+        // increaseCounter(counterTdy)
         today_value.tdy = true
-        todo_id.id -= 1*counterTdy
+        // todo_id.id -= 0*counterTdy
         removeAllItems()
         showItems(todos)
         showLocal()
         addDelete()
+        if (previousClick != "today")
+        {
+            ah = true
+        } else {
+            ah = false
+        }
+        previousClick="today"
+
     })
 let later = document.querySelector("later")
 later.addEventListener("click", () => {
-    increaseCounter(counterLtr)
+    // increaseCounter(counterLtr)
     today_value.tdy = false
-    // console.log("tmmmr id is before the counter " +todo_id.tmr_id)
-    // console.log("this counter is "+ counterLtr)
-    todo_id.tmr_id -= 1*counterLtr
-    // console.log("id of the bug for later is "+todo_id.tmr_id)
+    // todo_id.tmr_id -= 0*counterLtr
     removeAllItems()
     showItems(tmr_dos)
-    // console.log("3RD STEP "+todo_id.tmr_id)
     showLocal()
     addDelete()
+    if (previousClick != "later")
+        {
+            ah = true
+        } else {
+            ah = false
+        }
+    previousClick="later"
 })
 //can add on clicick css that changes the border or something
 

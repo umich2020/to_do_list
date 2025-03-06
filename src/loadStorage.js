@@ -18,22 +18,13 @@ export function showLocal () {
             domShow(title,description,dueDate,priority)
         }
     }
-    if (tdy === true) {
-        todo_id.id -= localStorage.length
-    } else {
-        todo_id.tmr_id -= localStorage.length
-    }
+    // if (tdy === true) {
+    //     todo_id.id -= localStorage.length
+    // } else {
+    //     todo_id.tmr_id -= localStorage.length
+    // }
 }
-// export function getTdy () {
-//     for (let i=0; i< localStorage.length; i++) {
-//         let key=localStorage.key(i)
-//         let item = localStorage.getItem(key)
-//         if (key != "loglevel") {
-//             item = JSON.parse(item)
-//         }
-//         var tdy = item[4]
-//     }
-// }
+
 export function deleteLocal (key) {
     localStorage.removeItem(key)
     console.log("the item has been deleted "+ localStorage)

@@ -1,7 +1,9 @@
 //this connects array.js and item_creating.js to represent what is in the array
 //now i'm able to create array
-import {domShow} from "./item_creating.js"
+import {domShow, todo_id} from "./item_creating.js"
 import {todos, tmr_dos, createToDo,today_value} from "./array.js"
+import { previousClick, ah } from "./click_sidebar.js"
+import { deleteLocal } from "./loadStorage.js"
 today_value.tdy=false
 createToDo("title4","description4","5/5","low")
 today_value.tdy=true
@@ -15,9 +17,36 @@ showItems(todos)
 
 export function removeAllItems () {
     const items = document.getElementById("to_do_items").childNodes
+    console.log("previous click is "+previousClick)
+
+    items.forEach((item) => {
+        if (item.nodeType ===1) {
+            if (today_value.tdy === false ) {
+                // if (previousClick === "today") {
+                //     todo_id.tmr_id--
+                // } else {
+                //     todo_id.id--
+
+                // }
+                todo_id.id--
+            } else {
+                // if (previousClick !== "today") {
+                //     todo_id.id--
+                // } else {
+                //     todo_id.tmr_id--
+                // }
+                todo_id.tmr_id--
+            }
+        }
+
+    }
+    )
     for (let i = items.length -1 ; i>=0; i--) {
+
         items[i].remove()
     }
+    // items.remove()
+
 }
 export function addDelete () {
     const delete_buttons = document.querySelectorAll(".delete_button")
@@ -32,13 +61,15 @@ export function addDelete () {
             const title = document.querySelector(selector).textContent
             currentKey = title + id + today_value.tdy
             console.log("the current key is "+currentKey)
-            // for (let i = items.length -1 ; i>=0; i--) {
-            //     items[i].remove()
-            // }
-            // parent_item.remove()
-            // for (let i =0; i<todos[id].length;i++) {
-            //     todos[id][i] = null
-            // }
+            deleteLocal(currentKey)
+
+            for (let i = items.length -1 ; i>=0; i--) {
+                items[i].remove()
+            }
+            parent_item.remove()
+            for (let i =0; i<todos[id].length;i++) {
+                todos[id][i] = null
+            }
 
         })
     })
@@ -48,6 +79,7 @@ const addComplete = (function  () {
     complete_buttons.forEach((button) => {
         button.addEventListener("click", () => {
             console.log(" complete!!")
+            //should've had code that deleted it
         })
     })
 })()
